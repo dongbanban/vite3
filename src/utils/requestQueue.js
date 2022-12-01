@@ -83,10 +83,9 @@ export default class RequestQueue {
     requestNext(config) {
         if (this.pendingList.length) {
             this.pendingList.shift().fn?.()
+        } else if (this.reAxiosList.length) {
+            const nextRequest = this.reAxiosList.find(item => item.name === config.name)
+            this.request({ ...nextRequest, reAxiosCount: nextRequest.reAxiosCount + 1 })
         }
-        // else if (this.reAxiosList.length) {
-        //     const nextRequest = this.reAxiosList.find(item => item.name === config.name)
-        //     this.request({ ...nextRequest, reAxiosCount: nextRequest.reAxiosCount + 1 })
-        // }
     }
 }
