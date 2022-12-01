@@ -4,7 +4,7 @@
  */
 import { lazy } from 'react'
 import ac from './AsyncComponent'
-import ErrorRoute from './error'
+import ErrorRoute from './errorRoute'
 
 const routeConfig = [
     {
