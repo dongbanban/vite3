@@ -1,5 +1,5 @@
 /*
- * @FilePath: /click/Users/i104/vite3/src/config/config.menu.js
+ * @FilePath: /click/Users/i104/vite3/src/config/config.menu.jsx
  * @author: dongyang(yang.dong@derbysoft.net)
  */
 import React from 'react'
@@ -41,6 +41,11 @@ const menu = [
         title: 'Request Queue',
         iconEl: <AppstoreOutlined />,
         route: '/requestQueue'
+    },
+    {
+        title: 'Zustand Demo',
+        iconEl: <AppstoreOutlined />,
+        route: '/zustand'
     },
 ];
 

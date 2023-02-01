@@ -16,6 +16,7 @@ export default defineConfig({
       { find: 'config', replacement: resolveRootPath('src/config') },
       { find: 'layout', replacement: resolveRootPath('src/layout') },
       { find: 'routes', replacement: resolveRootPath('src/routes') },
+      { find: 'stores', replacement: resolveRootPath('src/stores') },
       { find: 'styles', replacement: resolveRootPath('src/styles') },
       { find: 'utils', replacement: resolveRootPath('src/utils') },
       { find: 'views', replacement: resolveRootPath('src/views') },

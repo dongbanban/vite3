@@ -27,6 +27,11 @@ const routeConfig = [
                 element: ac(lazy(() => import('views/requestQueue'))),
                 errorElement: <ErrorRoute />
             },
+            {
+                path: "/zustand",
+                element: ac(lazy(() => import('views/zustandDemo'))),
+                errorElement: <ErrorRoute />
+            },
         ]
     },
 ]
