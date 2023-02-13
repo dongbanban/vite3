@@ -1,5 +1,5 @@
 /*
- * @FilePath: /click/Users/i104/vite3/src/routes/config.jsx
+ * @FilePath: /Users/i104/vite3/src/routes/config.jsx
  * @author: dongyang(yang.dong@derbysoft.net)
  */
 import { lazy } from 'react'
@@ -30,6 +30,11 @@ const routeConfig = [
             {
                 path: "/zustand",
                 element: ac(lazy(() => import('views/zustandDemo'))),
+                errorElement: <ErrorRoute />
+            },
+            {
+                path: "/cssDemo",
+                element: ac(lazy(() => import('views/cssDemo'))),
                 errorElement: <ErrorRoute />
             },
         ]
