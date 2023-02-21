@@ -12,6 +12,15 @@ const isBlob = value => getValueType(value) === ValueType.BLOB
 const isFile = value => getValueType(value) === ValueType.FILE
 const isBlank = value => value === ''
 const isFalseValue = value => isBlank(value) || [ValueType.NULL, ValueType.UNDEFINED].includes(getValueType(value)) || value === false
+const getUuid = () => {
+    let uuid = "";
+    for (let i = 1; i <= 32; i++) {
+        const n = Math.floor(Math.random() * 16.0).toString(16);
+        uuid += n;
+        if (i == 8 || i == 12 || i == 16 || i == 20) uuid += "-";
+    }
+    return uuid;
+}
 
 export {
     getValueType,
@@ -20,5 +29,6 @@ export {
     isBlob,
     isFile,
     isBlank,
-    isFalseValue
+    isFalseValue,
+    getUuid
 }
