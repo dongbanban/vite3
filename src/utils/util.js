@@ -4,7 +4,7 @@
  */
 import { ValueType } from 'enum'
 
-const getValueType = variable => Object.prototype.toString.call(variable)
+const getValueType = value => Object.prototype.toString.call(value)
 
 const isArray = value => getValueType(value) === ValueType.ARRAY
 const isObject = value => getValueType(value) === ValueType.OBJECT
