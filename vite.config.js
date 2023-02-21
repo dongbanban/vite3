@@ -1,5 +1,5 @@
 /*
- * @FilePath: /click/Users/i104/vite3/vite.config.js
+ * @FilePath: /Users/i104/vite3/vite.config.js
  * @author: dongyang(yang.dong@derbysoft.net)
  */
 import { defineConfig } from 'vite'
@@ -14,6 +14,7 @@ export default defineConfig({
       { find: 'assets', replacement: resolveRootPath('src/assets') },
       { find: 'components', replacement: resolveRootPath('src/components') },
       { find: 'config', replacement: resolveRootPath('src/config') },
+      { find: 'enum', replacement: resolveRootPath('src/enum') },
       { find: 'layout', replacement: resolveRootPath('src/layout') },
       { find: 'routes', replacement: resolveRootPath('src/routes') },
       { find: 'stores', replacement: resolveRootPath('src/stores') },

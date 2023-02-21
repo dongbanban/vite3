@@ -37,6 +37,11 @@ const routeConfig = [
                 element: ac(lazy(() => import('views/cssDemo'))),
                 errorElement: <ErrorRoute />
             },
+            {
+                path: "/file&blob",
+                element: ac(lazy(() => import('views/file&blob'))),
+                errorElement: <ErrorRoute />
+            },
         ]
     },
 ]

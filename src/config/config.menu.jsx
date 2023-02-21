@@ -52,6 +52,11 @@ const menu = [
         iconEl: <AppstoreOutlined />,
         route: '/cssDemo'
     },
+    {
+        title: 'File & Blob',
+        iconEl: <AppstoreOutlined />,
+        route: '/file&blob'
+    },
 ];
 
 export { recursionMenu, menu } 
