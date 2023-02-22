@@ -3,6 +3,13 @@
  * @author: dongyang(yang.dong@derbysoft.net)
  */
 import { isFile, isBlob } from './util'
+/**
+ * @description: file对象转base64/blob
+ * @param {*} file
+ * @param {*} convertType
+ * @param {*} callback
+ * @return {*}
+ */
 const fileConvert = ({ file, convertType = 'base64', callback }) => {
     if (!isFile(file)) {
         throw new Error('Please convert file')
@@ -19,6 +26,12 @@ const fileConvert = ({ file, convertType = 'base64', callback }) => {
     }
 }
 
+/**
+ * @description: 下载非url形式的文件
+ * @param {*} data
+ * @param {*} fileName
+ * @return {*}
+ */
 const download = ({ data, fileName = 'default.png' }) => {
     if (!isFile(data) && !isBlob(data)) {
         throw new Error('Error data type to download')
@@ -34,7 +47,24 @@ const download = ({ data, fileName = 'default.png' }) => {
     URL.revokeObjectURL(blobUrl);
 }
 
+/**
+ * @description: 字节转-->KB/MB/G/T
+ * @param {*} size
+ * @return {*}
+ */
+const getFileSize = size => {
+    if (!size) return '-';
+    const num = 1024.00;
+    const newSize = Number(size);
+    if (newSize < num) { return `${newSize}B`; }
+    if (newSize < num ** 2) { return `${(newSize / num).toFixed(2)}KB`; } // KB
+    if (newSize < num ** 3) { return `${(newSize / num ** 2).toFixed(2)}MB`; } // MB
+    if (newSize < num ** 4) { return `${(newSize / num ** 3).toFixed(2)}G`; } // G
+    return `${(newSize / num ** 4).toFixed(2)}T`; // T
+};
+
 export {
     fileConvert,
-    download
+    download,
+    getFileSize
 }
