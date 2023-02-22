@@ -4,11 +4,9 @@
  */
 
 import React, { useCallback, useState } from 'react'
-import { getUuid } from 'utils/util'
 import { fileConvert } from 'utils/file'
 
 const FileAndBlob = () => {
-    console.log(getUuid())
     const [url, setUrl] = useState(null)
     const handleFileChange = useCallback((e) => {
         Array.of(...e.target.files).forEach(file => {

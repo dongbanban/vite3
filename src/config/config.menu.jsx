@@ -57,6 +57,11 @@ const menu = [
         iconEl: <AppstoreOutlined />,
         route: '/file&blob'
     },
+    {
+        title: 'Dayjs Demo',
+        iconEl: <AppstoreOutlined />,
+        route: '/dayjsDemo'
+    },
 ];
 
 export { recursionMenu, menu } 

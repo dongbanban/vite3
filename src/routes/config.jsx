@@ -42,6 +42,11 @@ const routeConfig = [
                 element: ac(lazy(() => import('views/file&blob'))),
                 errorElement: <ErrorRoute />
             },
+            {
+                path: "/dayjsDemo",
+                element: ac(lazy(() => import('views/dayjsDemo'))),
+                errorElement: <ErrorRoute />
+            },
         ]
     },
 ]
