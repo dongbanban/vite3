@@ -23,18 +23,42 @@ export default defineConfig({
       { find: 'views', replacement: resolveRootPath('src/views') },
     ]
   },
+  build: {
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        entryFileNames: 'static/js/[name]-[hash].js',
+        assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        // 解决打包时Some chunks are larger警告
+        // eslint-disable-next-line consistent-return
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id
+              .toString()
+              .split('node_modules/')[1]
+              .split('/')[0]
+              .toString();
+          }
+        }
+      }
+    }
+  },
+  esbuild: {
+    treeShaking: true,
+    drop: ['debugger', 'console']
+  },
   plugins: [react()],
   server: {
     hmr: {
       overlay: false // 禁止服务器错误遮罩
     },
     port: 8888,
-    proxy: {
-      // '/': {
-      //   target: '',
-      //   secure: false,
-      //   changeOrigin: true
-      // }
-    }
+    // proxy: {
+    //   '/test0': {
+    //     target: 'https://www.baidu.com',
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/api\/test0/, ''),
+    //   }
+    // }
   }
 })
