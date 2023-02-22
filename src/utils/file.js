@@ -48,6 +48,23 @@ const download = ({ data, fileName = 'default.png' }) => {
 }
 
 /**
+ * @description: 下载url形式的文件
+ * @param {*} url
+ * @return {*}
+ */
+const downloadByUrl = url => {
+    if (!url) {
+        return
+    }
+    const downloadEl = document.createElement('a');
+    document.body.appendChild(downloadEl);
+    downloadEl.style.display = 'none';
+    downloadEl.href = url;
+    downloadEl.click();
+    document.body.removeChild(downloadEl);
+}
+
+/**
  * @description: 字节转-->KB/MB/G/T
  * @param {*} size
  * @return {*}
@@ -66,5 +83,6 @@ const getFileSize = size => {
 export {
     fileConvert,
     download,
-    getFileSize
+    getFileSize,
+    downloadByUrl
 }
